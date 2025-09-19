@@ -34,18 +34,24 @@
     header nav a:hover {
       color: #f39c12;
     }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 25px;
-      background: #fff;
-      margin: 4px 0;
-      border-radius: 5px;
-    }
+    /* Show hamburger only on smaller screens */
+  @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #2c3e50;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links a, .nav-links button {
+    margin: 1rem 0;
+  }
+}
     .nav-links {
       display: flex;
     }
@@ -340,4 +346,5 @@
       this.reset();
     });
   </script></body>
+
 </html>
